@@ -1,8 +1,9 @@
 import React from 'react'
 import "../Styles/login.css"
+
 const Login = () => {
   return (
-    <div className='signin'>
+    // <div className='signin'>
       <form action="" className="sign-in">
           <h2 className='title'>Sign In</h2>
           <div className="input-field">
@@ -13,7 +14,7 @@ const Login = () => {
               <i className="fa fa-lock"></i>
               <input type="password" placeholder='password' />
           </div>
-          <input class="btn btn-primary login" type="submit" value="Login"/>
+          <input className="btn btn-primary login" type="submit" value="Login"/>
           <p className="socialtext">Or Sign in with social plateforms</p>
           <div className="social-media">
               <a href="#" className='social-icon'>
@@ -31,7 +32,7 @@ const Login = () => {
           </div>
 
       </form>
-    </div>
+    //</div>
   )
 }
 

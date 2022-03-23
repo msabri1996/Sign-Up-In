@@ -3,16 +3,12 @@ import "../Styles/register.css"
 
 const Register = () => {
   return (
-    <div className='signup'>
+    // <div className='signup'>
       <form action="" className="sign-up">
           <h2 className='title'>Sign In</h2>
           <div className="input-field">
               <i className="fa fa-user"></i>
-              <input type="text" placeholder='First Name' />
-          </div>
-          <div className="input-field">
-              <i className="fa fa-user"></i>
-              <input type="text" placeholder='Last Name' />
+              <input type="text" placeholder='Full Name' />
           </div>
           <div className="input-field">
               <i className="fa fa-user"></i>
@@ -30,7 +26,7 @@ const Register = () => {
               <i className="fa fa-lock"></i>
               <input type="password" placeholder='Repeated password' />
           </div>
-          <input class="btn btn-primary register" type="submit" value="Sign up"/>
+          <input className="btn btn-primary register" type="submit" value="Sign up"/>
           <p className="socialtext">Or Sign in with social plateforms</p>
           <div className="social-media">
               <a href="#" className='social-icon'>
@@ -48,7 +44,7 @@ const Register = () => {
           </div>
 
       </form>
-    </div>
+    // </div>
   )
 }
 
