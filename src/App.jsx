@@ -1,7 +1,7 @@
 
-import Login from "./Components/Login";
-import Panel from "./Components/Panel";
-import Register from "./Components/Register";
+import Login from "./Pages/Auth/Login";
+import Panel from "./Pages/Auth/Panel";
+import Register from "./Pages/Auth/Register";
 import "./Styles/app.css"
 
 function App() {
