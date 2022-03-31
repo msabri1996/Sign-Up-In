@@ -29,7 +29,7 @@ const Login = () => {
                    .then(response=>{
                        setError("")
                        console.log(response.data.msg)
-                       navTo('/task')
+                       navTo('/home')
                    })
                    .catch(errServer=>setError(errServer.response?.data.msg))
 
