@@ -1,13 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { Credential } from '../Models/Credentials';
-import "../Styles/login.css"
-import AxiosClient from '../Tools/Axios';
+import { Credential } from '../../Models/Credentials';
+import "../../Styles/login.css"
+import AxiosClient from '../../Tools/Axios';
 
 const Login = () => {
   
   // get data using useRef  
-  const usernameRef = useRef();
+  const emailRef = useRef();
   const passwordRef = useRef();
 
   //state
@@ -18,31 +18,37 @@ const Login = () => {
 
   const handleSubmitLogin = (e)=>{
     e.preventDefault();
-    const user = usernameRef.current.value;
+    const email = emailRef.current.value;
     const pass = passwordRef.current.value;
 
-    if(!user || !pass){
+    if(!email || !pass){
         alert("empty values sorry 😿")
     }
-    else{
-        AxiosClient.post("/auth/login",new Credential(user,pass))
+    
+        AxiosClient.post("/auth/login",new Credential(email,pass))
                    .then(response=>{
                        setError("")
-                       navTo('/home')
+                       console.log(response.data.msg)
+                       navTo('/task')
                    })
-                   .catch(errServer=>setError(errServer.response.data.msg))
-    }
+                   .catch(errServer=>setError(errServer.response?.data.msg))
+
+    emailRef.current.value = "";
+    passwordRef.current.value = "";
   }
   return (
       <form action="" className="sign-in" onSubmit={handleSubmitLogin}>
           <h2 className='title'>Sign In</h2>
           <div className="input-field">
               <i className="fa fa-user"></i>
-              <input type="text" ref={usernameRef} placeholder='username' onFocus={() => setError("")} />
+              <input type="text" ref={emailRef} placeholder='email' onFocus={() => setError("")} />
           </div>
           <div className="input-field">
               <i className="fa fa-lock"></i>
               <input type="password" ref={passwordRef} placeholder='password' onFocus={() => setError("")} />
+          </div>
+          <div className={error ? "alert alert-danger ":"d-none"} role="alert">
+                 {error}
           </div>
           <input className="btn btn-primary login" type="submit" value="Login"/>
           <p className="socialtext">Or Sign in with social plateforms</p>

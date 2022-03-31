@@ -1,8 +1,8 @@
 
-import NavBar from "shared/navBar/NavBar";
-import Footer from "shared/footer/footer";
+import NavBar from "../../Shared/navBar/Navbar";
+import Footer from "../../Shared/Footer/Footer";
 
-export const ListTodoPage = () => {
+const HomePage = () => {
 
   //
   return (
@@ -13,3 +13,5 @@ export const ListTodoPage = () => {
     </div>
   );
 };
+
+export default HomePage;

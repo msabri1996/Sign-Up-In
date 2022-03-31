@@ -2,9 +2,9 @@
 import Login from "./Login";
 import Panel from "./Panel";
 import Register from "./Register";
-import "./Styles/app.css"
+import "../../Styles/registerlogin.css"
 
-function App() {
+function RegisterLogin() {
 
   return (
     <div className="content">
@@ -19,4 +19,4 @@ function App() {
   );
 }
 
-export default App;
+export default RegisterLogin;

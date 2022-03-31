@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
-import { UserModel } from '../Models/UserModel';
-import "../Styles/register.css"
-import AxiosClient from '../Tools/Axios';
+import { UserModel } from '../../Models/UserModel';
+import "../../Styles/register.css"
+import AxiosClient from '../../Tools/Axios';
 
 const Register = () => {
   const fullnameRef = useRef();
@@ -57,17 +57,17 @@ const Register = () => {
                        setError(err.response.data.msg)
                    })
                  
-    // fullnameRef.current.value="";
-    // avatarRef.current.value="";
-    // emailRef.current.value="";
-    // passwordRef.current.value="";
-    // rpasswordRef.current.value="";
+    fullnameRef.current.value="";
+    avatarRef.current.value="";
+    emailRef.current.value="";
+    passwordRef.current.value="";
+    rpasswordRef.current.value="";
     console.log(error)
   }
 
   return (
       <form action="" onSubmit={handleSubmit} className="sign-up">
-          <h2 className='title'>Sign In</h2>
+          <h2 className='title'>Sign Up</h2>
           <div className="input-field">
               <i className="fa fa-user"></i>
               <input type="text" placeholder='Full Name' ref={fullnameRef} onFocus={()=>{setError("")}}/>
